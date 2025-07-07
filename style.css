@@ -1,0 +1,1460 @@
+body {
+  font-family: Arial, sans-serif;
+  font-size: 0.88rem;
+  background-color:white;
+  color: black;
+}
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background-color: #edede9 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid gainsboro;
+}
+.navbar-brand img {
+  height: 40px;
+  margin-right: 10px;
+}
+.navbar-brand span {
+  font-weight: 900;
+  font-size: 1.8rem;
+  background: linear-gradient(90deg, #6a32e0, #2ebcc3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.nav-link {
+  font-weight: bold;
+  color: black !important;
+  font-size: 0.78rem;
+  padding: 0.4rem 0.5rem;
+  white-space: nowrap;
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2.5px;
+  left: 0;
+  bottom: -3px;
+  background-color: #0077b6;
+  transition: width 0.3s;
+  border-radius: 3px;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+.cred{
+  color: red;
+}
+
+.btn-outline-primary,
+.btn-register {
+  font-size: 0.76rem;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 4px 10px;
+  margin-left: 8px;
+  white-space: nowrap;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.btn-outline-primary {
+  border: 1px solid #0077b6;
+  color: #0077b6;
+}
+.btn-register {
+  border: 1px solid darkgreen;
+  color: darkgreen;
+}
+.btn-register:hover {
+  background-color: darkgreen;
+  color: white;
+}
+
+/* Profile as circular div with gradient border */
+.profile-wrapper {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  padding: 2px;
+  background: linear-gradient(90deg, #ff5757, #8c52ff);
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.profile-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+/* Location container */
+.location-container {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  user-select: none;
+}
+.location-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  fill: darkred;
+}
+.location-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  font-size: 0.7rem;
+}
+.location-text .line1 {
+  font-weight: 500;
+  color: #555;
+}
+.location-text .line2 {
+  font-weight: bold;
+  font-size: 0.85rem;
+  color: black;
+  white-space: nowrap;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Remove hover underline from buttons/profile/location */
+.btn-outline-primary::after,
+.btn-register::after,
+.profile-wrapper::after,
+.location-container::after {
+  display: none !important;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-nav {
+    flex-direction: column;
+  }
+  .location-container {
+    margin-top: 10px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+}
+/* hero section */
+/* Hero Section with Full Background Image Coverage */
+.hello-banner {
+  background: url('health.jpg') no-repeat center center;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh; /* Full screen height */
+  width: 100%;
+  padding-top: 60px; /* Adjusted to create 5px gap below a typical navbar */
+  padding-bottom: 60px;
+  color: white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Dark overlay for text readability */
+.hello-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.55); /* slightly darker overlay */
+  z-index: 1;
+}
+
+/* Ensure all content is above overlay */
+.hello-banner * {
+  position: relative;
+  z-index: 2;
+}
+
+.edge-search-bar {
+  width: 80%; /* wider */
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.edge-search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.edge-search-icon {
+  position: absolute;
+  left: 15px;
+  pointer-events: none;
+  color: gray; /* icon color */
+  width: 24px;
+  height: 24px;
+}
+
+.edge-search-input {
+  padding-left: 45px; /* leave space for icon */
+  border-radius: 25px;
+  height: 45px;
+  font-size: 1rem;
+  border: 1.8px solid #8c52ff;
+  transition: box-shadow 0.3s ease;
+}
+
+.edge-search-input:focus {
+  outline: none;
+  box-shadow: 0 0 8px 0 #8c52ff;
+  border-color: #8c52ff;
+}
+ 
+ /* New Button Styles */
+.hero-buttons {
+  gap: 15px; /* Space between buttons */
+}
+
+.btn-primary-custom {
+  background-color: #4361ee; /* Blue for Check Symptoms button */
+  border-color: #4361ee;
+  color: white;
+  padding: 12px 27px;
+  border-radius: 50px;
+  font-family: Arial, sans-serif; /* Added font family */
+  font-weight: bold;
+  font-size: 0.9em; /* Adjusted font size for "small" */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+  text-decoration: none; /* Remove underline for links */
+}
+
+.btn-primary-custom:hover {
+  background-color: #364fcc; /* Slightly darker blue on hover */
+  border-color: #364fcc;
+  color: white;
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.btn-primary-custom i {
+  margin-right: 8px;
+  font-size: 1.1em;
+}
+
+.btn-outline-secondary-custom {
+  background-color: transparent;
+  border: 2px solid white; /* Gray border for Chat with AI button */
+  color: white; /* Gray text for Chat with AI button */
+  padding: 12px 27px;
+  border-radius: 50px;
+  font-family: Arial, sans-serif; /* Added font family */
+  font-weight: bold;
+  font-size: 0.9em; /* Adjusted font size for "small" */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  text-decoration: none; /* Remove underline for links */
+}
+
+.btn-outline-secondary-custom:hover {
+  background-color: rgba(128, 128, 128, 0.2); /* Light gray background on hover */
+  color: rgb(159, 155, 155); /* Keep text gray on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.btn-outline-secondary-custom i {
+  margin-right: 8px;
+  font-size: 1.1em;
+}
+
+/* Responsive adjustments for buttons */
+@media (max-width: 768px) {
+  .hero-buttons {
+    flex-direction: column; /* Stack buttons vertically on small screens */
+    align-items: center; /* Center buttons when stacked */
+  }
+
+  .btn-primary-custom,
+  .btn-outline-secondary-custom {
+    width: 80%; /* Make buttons take more width */
+    max-width: 300px; /* Limit max width */
+    margin-right: 0 !important; /* Remove horizontal margin */
+    margin-bottom: 10px; /* Add vertical margin */
+  }
+}
+
+/* Ensure feather icons are styled correctly within buttons */
+.btn-primary-custom i,
+.btn-outline-secondary-custom i {
+  vertical-align: middle; /* Align icon vertically with text */
+}
+/* cards */
+/* CSS for Comprehensive Health Solutions Section */
+
+/* Section for Comprehensive Health Solutions */
+.health-solutions-section {
+  background-color: #e0f2f7; /* Light blue background as seen in the screenshot */
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.health-solutions-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 60px; /* Space below the main title */
+  font-family: Arial, sans-serif; /* Added font family */
+}
+
+/* Cards Container */
+.health-cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px; /* Space between cards */
+}
+
+.health-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  width: 100%; /* Default to full width on small screens */
+  max-width: 280px; /* Max width for each card */
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribute space for content */
+}
+
+.health-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon Circle Styling */
+.health-card .icon-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #f0f8ff; /* Default light background for icon circle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.health-card .icon-circle i {
+  font-size: 28px;
+  stroke-width: 2.5; /* Make feather icons bolder */
+}
+
+/* Specific Icon Colors and Backgrounds */
+.health-card.symptom .icon-circle { background-color: #e6f2ff; } /* Lighter blue */
+.health-card.symptom .icon-circle i { color: #4A90E2; } /* Blue */
+
+.health-card.medicine .icon-circle { background-color: #e0ffe0; } /* Lighter green */
+.health-card.medicine .icon-circle i { color: #7ED321; } /* Green */
+
+.health-card.diet .icon-circle { background-color: #fff0e6; } /* Lighter orange */
+.health-card.diet .icon-circle i { color: #F5A623; } /* Orange */
+
+.health-card.doctor .icon-circle { background-color: #f5e6ff; } /* Lighter purple */
+.health-card.doctor .icon-circle i { color: #9B59B6; } /* Purple */
+
+
+.health-card h3 {
+  font-size: 1.25rem; /* Reduced from 1.5rem */
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 10px;
+  font-family: Arial, sans-serif; /* Added font family */
+}
+
+.health-card p {
+  font-size: 0.85rem; /* Reduced from 0.95rem */
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 25px; /* Space before button */
+  flex-grow: 1; /* Allow description to take available height */
+  font-family: Arial, sans-serif; /* Added font family */
+}
+
+/* Card Button Styling */
+.health-card .btn-card {
+  display: inline-block;
+  padding: 8px 20px; /* Reduced padding */
+  border-radius: 8px;
+  background-color: white; /* White background */
+  font-weight: bold;
+  font-size: 0.85rem; /* Reduced font size */
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  align-self: flex-start; /* Align button to the left */
+  border: 1px solid; /* Add border for outlined look */
+  font-family: Arial, sans-serif; /* Added font family */
+}
+
+/* Specific Button Colors */
+.health-card.symptom .btn-card {
+  color: #4A90E2;
+  border-color: #4A90E2;
+}
+.health-card.symptom .btn-card:hover {
+  background-color: #4A90E2;
+  color: white;
+}
+
+.health-card.medicine .btn-card {
+  color: #7ED321;
+  border-color: #7ED321;
+}
+.health-card.medicine .btn-card:hover {
+  background-color: #7ED321;
+  color: white;
+}
+
+.health-card.diet .btn-card {
+  color: #F5A623;
+  border-color: #F5A623;
+}
+.health-card.diet .btn-card:hover {
+  background-color: #F5A623;
+  color: white;
+}
+
+.health-card.doctor .btn-card {
+  color: #9B59B6;
+  border-color: #9B59B6;
+}
+.health-card.doctor .btn-card:hover {
+  background-color: #9B59B6;
+  color: white;
+}
+
+/* Responsive adjustments for cards */
+@media (min-width: 768px) {
+  .health-card {
+    width: calc(50% - 15px); /* Two cards per row on medium screens */
+  }
+}
+
+@media (min-width: 992px) {
+  .health-card {
+    width: calc(25% - 22.5px); /* Four cards per row on large screens */
+  }
+}
+ /* card-2 */
+ /* CSS for 24/7 AI Health Assistant Section */
+.ai-assistant-section {
+  background-color: #ffffff; /* White background */
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.ai-assistant-section .icon-large {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #e6f2ff; /* Light blue background for icon circle */
+}
+
+.ai-assistant-section .icon-large i {
+  font-size: 40px;
+  color: #4A90E2; /* Blue icon color */
+  stroke-width: 2; /* Adjust stroke for icon boldness */
+}
+
+.ai-assistant-section h2 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.ai-assistant-section p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+  font-family: Arial, sans-serif;
+}
+
+.ai-assistant-section .btn-start-chatting {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 30px;
+  border-radius: 50px;
+  background-color: #28a745; /* Green button */
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: Arial, sans-serif;
+}
+
+.ai-assistant-section .btn-start-chatting:hover {
+  background-color: #218838; /* Darker green on hover */
+  transform: translateY(-2px);
+}
+
+.ai-assistant-section .btn-start-chatting i {
+  margin-right: 10px;
+  font-size: 1.1em;
+}
+
+/* Statistics Section */
+.statistics-section {
+  background: linear-gradient(to right, #e0f2f7, #f0f8ff); /* Gradient background */
+  padding: 60px 20px;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 40px; /* Space between stat items */
+}
+
+.stat-item {
+  flex: 1;
+  min-width: 200px; /* Ensure items don't get too small */
+  max-width: 300px;
+  text-align: center;
+}
+
+.stat-item .stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.stat-item .stat-description {
+  font-size: 1rem;
+  color: #555;
+  font-family: Arial, sans-serif;
+}
+
+/* Specific Colors for Stat Numbers */
+.stat-item:nth-child(1) .stat-number { color: #4A90E2; } /* Blue */
+.stat-item:nth-child(2) .stat-number { color: #28a745; } /* Green */
+.stat-item:nth-child(3) .stat-number { color: #9B59B6; } /* Purple */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .ai-assistant-section h2 {
+    font-size: 1.8rem;
+  }
+  .ai-assistant-section p {
+    font-size: 0.9rem;
+  }
+  .statistics-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .stat-item {
+    margin-bottom: 30px;
+  }
+}
+
+/* footer */
+.footer-link {
+  color: #6c757d;
+  text-decoration: none;
+  transition: color 0.3s, text-decoration 0.3s;
+}
+
+.footer-link:hover {
+  color: #0077b6;
+  text-decoration: underline;
+}
+/* card-3 */
+.our-values-section {
+    padding: 80px 0; /* Vertical padding for the section */
+    background-color: #f8f9fa; /* Light background color */
+}
+.our-values-section .section-title {
+    font-size: 2.5rem; /* Larger title font size */
+    font-weight: 700; /* Bold font weight */
+    color: #343a40; /* Darker text color */
+    margin-bottom: 10px; /* Space below title */
+}
+.our-values-section .section-subtitle {
+    font-size: 1.1rem; /* Subtitle font size */
+    color: #6c757d; /* Muted text color */
+    margin-bottom: 50px; /* Space below subtitle */
+}
+.value-item {
+    text-align: center; /* Center align content within each item */
+    padding: 20px; /* Padding inside each value item */
+    margin-bottom: 30px; /* Space between items on smaller screens */
+}
+.value-item .icon-wrapper {
+    font-size: 2rem; /* Icon size made slightly smaller */
+    margin-bottom: 20px; /* Space below icon */
+    display: inline-block; /* Ensure proper spacing */
+}
+/* Specific icon colors as seen in the image */
+.value-item .icon-wrapper.red {
+    color: #dc3545; /* Red for Compassionate Care */
+}
+.value-item .icon-wrapper.blue {
+    color: #0d6efd; /* Blue for Trust & Security */
+}
+.value-item .icon-wrapper.orange {
+    color: #fd7e14; /* Orange for Excellence */
+}
+.value-item .icon-wrapper.green {
+    color: #198754; /* Green for Accessibility */
+}
+
+.value-item .value-title {
+    font-size: 1.1rem; /* Value title font size made slightly smaller */
+    font-weight: 600; /* Semi-bold font weight */
+    color: #343a40; /* Darker text color */
+    margin-bottom: 10px; /* Space below value title */
+}
+.value-item .value-description {
+    font-size: 0.8rem; /* Description font size made slightly smaller */
+    color: #6c757d; /* Muted text color */
+    line-height: 1.6; /* Line height for readability */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 767.98px) {
+    .our-values-section {
+        padding: 60px 0;
+    }
+    .our-values-section .section-title {
+        font-size: 2rem;
+    }
+    .our-values-section .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+    .value-item {
+        padding: 15px;
+    }
+}
+
+/* Custom CSS for the Testimonials section */
+.testimonials-section {
+    padding: 80px 0; /* Vertical padding for the section */
+    background-color: #ffffff; /* White background for contrast */
+}
+.testimonials-section .section-title {
+    font-size: 2.5rem; /* Larger title font size */
+    font-weight: 700; /* Bold font weight */
+    color: #343a40; /* Darker text color */
+    margin-bottom: 10px; /* Space below title */
+}
+.testimonials-section .section-subtitle {
+    font-size: 1.1rem; /* Subtitle font size */
+    color: #6c757d; /* Muted text color */
+    margin-bottom: 50px; /* Space below subtitle */
+}
+.testimonial-card {
+    background-color: #f8f9fa; /* Light background for cards */
+    border-radius: 15px; /* Rounded corners for cards */
+    padding: 30px; /* Padding inside cards */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+    text-align: center; /* Center align content */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on hover */
+}
+.testimonial-card:hover {
+    transform: translateY(-5px); /* Lift card on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12); /* Enhanced shadow on hover */
+}
+.testimonial-card .profile-img {
+    width: 100px; /* Profile image size */
+    height: 100px; /* Profile image size */
+    border-radius: 50%; /* Circular image */
+    object-fit: cover; /* Ensure image covers the area */
+    border: 3px solid #0d6efd; /* Blue border around image */
+}
+.testimonial-card .user-name {
+    font-size: 1.3rem; /* User name font size */
+    font-weight: 600; /* Semi-bold font weight */
+    color: #343a40; /* Darker text color */
+    margin-bottom: 5px; /* Space below name */
+}
+.testimonial-card .stars {
+    color: #ffc107; /* Gold color for stars */
+    font-size: 1rem; /* Star icon size */
+}
+.testimonial-card .user-experience {
+    font-size: 0.9rem; /* User experience text size */
+    color: #495057; /* Slightly darker text color */
+    line-height: 1.6; /* Line height for readability */
+    font-style: italic; /* Italicize the quote */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 767.98px) {
+    .testimonials-section {
+        padding: 60px 0;
+    }
+    .testimonials-section .section-title {
+        font-size: 2rem;
+    }
+    .testimonials-section .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+    .testimonial-card {
+        padding: 20px;
+    }
+    .testimonial-card .profile-img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* card -4 */
+/* Custom CSS for the Testimonials section */
+.testimonials-section {
+    padding: 80px 0; /* Vertical padding for the section */
+    background-color: #ffffff; /* White background for contrast */
+}
+.testimonials-section .section-title {
+    font-size: 2.5rem; /* Larger title font size */
+    font-weight: 700; /* Bold font weight */
+    color: #343a40; /* Darker text color */
+    margin-bottom: 10px; /* Space below title */
+}
+.testimonials-section .section-subtitle {
+    font-size: 1.1rem; /* Subtitle font size */
+    color: #6c757d; /* Muted text color */
+    margin-bottom: 50px; /* Space below subtitle */
+}
+.testimonial-card {
+    background-color: #f8f9fa; /* Light background for cards */
+    border-radius: 15px; /* Rounded corners for cards */
+    padding: 30px; /* Padding inside cards */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+    text-align: center; /* Center align content */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on hover */
+}
+.testimonial-card:hover {
+    transform: translateY(-5px); /* Lift card on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12); /* Enhanced shadow on hover */
+}
+.testimonial-card .profile-img {
+    width: 100px; /* Profile image size */
+    height: 100px; /* Profile image size */
+    border-radius: 50%; /* Circular image */
+    object-fit: cover; /* Ensure image covers the area */
+    border: 3px solid #0d6efd; /* Blue border around image */
+}
+.testimonial-card .user-name {
+    font-size: 1.3rem; /* User name font size */
+    font-weight: 600; /* Semi-bold font weight */
+    color: #343a40; /* Darker text color */
+    margin-bottom: 5px; /* Space below name */
+}
+.testimonial-card .stars {
+    color: #ffc107; /* Gold color for stars */
+    font-size: 1rem; /* Star icon size */
+}
+.testimonial-card .user-experience {
+    font-size: 0.9rem; /* User experience text size */
+    color: #495057; /* Slightly darker text color */
+    line-height: 1.6; /* Line height for readability */
+    font-style: italic; /* Italicize the quote */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 767.98px) {
+    .testimonials-section {
+        padding: 60px 0;
+    }
+    .testimonials-section .section-title {
+        font-size: 2rem;
+    }
+    .testimonials-section .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+    .testimonial-card {
+        padding: 20px;
+    }
+    .testimonial-card .profile-img {
+        width: 80px;
+        height: 80px;
+    }
+}
+/* about */
+/* --- About MediCure Section Styles --- */
+.about-medicure-section {
+    background-color: #e6f0ff; /* Light blue background from screenshot */
+    padding: 80px 0; /* Consistent padding */
+}
+
+.about-medicure-section .section-title-about {
+    font-size: 2.5rem; /* Matches screenshot */
+    font-weight: 700; /* Bold */
+    color: #343a40; /* Dark text */
+    letter-spacing: -0.02em; /* Adjusted to match screenshot */
+}
+
+.about-medicure-section .section-title-about .text-primary {
+    color: #007bff !important; /* Specific blue for "MediCure" */
+}
+
+.about-medicure-section .section-subtitle-about {
+    font-size: 1.1rem; /* Matches screenshot */
+    color: #6c757d; /* Muted text */
+    line-height: 1.5;
+    margin-bottom: 50px; /* Space below subtitle */
+}
+
+.about-medicure-section .about-card {
+    background-color: #ffffff; /* White card background */
+    border-radius: 10px; /* Slightly rounded corners */
+    padding: 30px; /* Padding inside cards */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; /* Ensure cards are same height in a row */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to top of card */
+    align-items: center;
+}
+
+.about-medicure-section .about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.about-medicure-section .card-icon-wrapper {
+    font-size: 3rem; /* Icon size */
+    color: #007bff; /* Blue color for icons */
+    margin-bottom: 15px; /* Space below icon */
+    display: inline-block; /* For proper alignment */
+}
+
+.about-medicure-section .card-title-about {
+    font-size: 1.5rem; /* Card title font size */
+    font-weight: 600; /* Semi-bold */
+    color: #343a40; /* Dark text */
+    margin-bottom: 10px; /* Space below title */
+    letter-spacing: -0.01em; /* Adjusted to match screenshot */
+}
+
+.about-medicure-section .card-description-about {
+    font-size: 0.95rem; /* Description font size */
+    color: #495057; /* Slightly darker text */
+    line-height: 1.6; /* Readability */
+    text-align: left; /* Text alignment as in screenshot */
+    padding: 0 10px; /* Slight horizontal padding for text within card */
+}
+
+/* --- Our Story Section Styles --- */
+.our-story-section {
+    padding: 80px 0; /* Consistent padding */
+    background-color: #ffffff; /* White background */
+}
+
+.our-story-section .section-title-story {
+    font-size: 2.5rem; /* Matches screenshot */
+    font-weight: 700; /* Bold */
+    color: #343a40; /* Dark text */
+    letter-spacing: -0.02em; /* Adjusted to match screenshot */
+    text-align: left; /* Aligned to left */
+}
+
+.our-story-section .story-text {
+    font-size: 1rem; /* Matches screenshot */
+    color: #495057; /* Text color */
+    line-height: 1.7; /* Readability */
+    text-align: left; /* Aligned to left */
+}
+
+.our-story-section .img-fluid {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Rounded corners for image */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* --- Our Leadership Team Section Styles --- */
+.leadership-team-section {
+    background-color: #f8f9fa; /* Light background */
+    padding: 80px 0; /* Consistent padding */
+}
+
+.leadership-team-section .section-title-leadership {
+    font-size: 2.5rem; /* Matches screenshot */
+    font-weight: 700; /* Bold */
+    color: #343a40; /* Dark text */
+    letter-spacing: -0.02em; /* Adjusted to match screenshot */
+}
+
+.leadership-team-section .section-subtitle-leadership {
+    font-size: 1.1rem; /* Matches screenshot */
+    color: #6c757d; /* Muted text */
+    line-height: 1.5;
+    margin-bottom: 50px; /* Space below subtitle */
+}
+
+.leadership-team-section .team-member-card {
+    background-color: #ffffff; /* White card background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 30px; /* Padding inside cards */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; /* Ensure cards are same height in a row */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.leadership-team-section .team-member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.leadership-team-section .team-profile-img {
+    width: 120px; /* Image size from screenshot */
+    height: 120px; /* Image size from screenshot */
+    border-radius: 50%; /* Circular shape */
+    object-fit: cover; /* Ensure image covers area */
+    border: 3px solid #007bff; /* Blue border as in screenshot */
+    margin-bottom: 20px; /* Space below image */
+}
+
+.leadership-team-section .team-name {
+    font-size: 1.3rem; /* Name font size */
+    font-weight: 600; /* Semi-bold */
+    color: #343a40; /* Dark text */
+    margin-bottom: 5px; /* Space below name */
+    letter-spacing: -0.01em; /* Adjusted */
+}
+
+.leadership-team-section .team-title {
+    font-size: 1rem; /* Title font size */
+    font-weight: 500; /* Medium weight */
+    color: #007bff !important; /* Blue color for title */
+    margin-bottom: 15px; /* Space below title */
+    letter-spacing: -0.01em; /* Adjusted */
+}
+
+.leadership-team-section .team-description {
+    font-size: 0.9rem; /* Description font size */
+    color: #495057; /* Text color */
+    line-height: 1.6; /* Readability */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 991.98px) { /* For tablets and smaller */
+    .about-medicure-section .section-title-about,
+    .our-story-section .section-title-story,
+    .leadership-team-section .section-title-leadership {
+        font-size: 2rem;
+    }
+    .about-medicure-section .section-subtitle-about,
+    .leadership-team-section .section-subtitle-leadership {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+    .about-medicure-section .about-card,
+    .leadership-team-section .team-member-card {
+        padding: 25px;
+    }
+    .about-medicure-section .card-icon-wrapper {
+        font-size: 2.5rem;
+    }
+    .about-medicure-section .card-title-about {
+        font-size: 1.3rem;
+    }
+    .about-medicure-section .card-description-about {
+        font-size: 0.9rem;
+    }
+    .our-story-section .story-text {
+        font-size: 0.95rem;
+    }
+    .leadership-team-section .team-profile-img {
+        width: 100px;
+        height: 100px;
+    }
+    .leadership-team-section .team-name {
+        font-size: 1.2rem;
+    }
+    .leadership-team-section .team-title {
+        font-size: 0.9rem;
+    }
+    .leadership-team-section .team-description {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 767.98px) { /* For mobile devices */
+    .about-medicure-section,
+    .our-story-section,
+    .leadership-team-section {
+        padding: 60px 0;
+    }
+    .about-medicure-section .section-title-about,
+    .our-story-section .section-title-story,
+    .leadership-team-section .section-title-leadership {
+        font-size: 1.8rem;
+    }
+    .about-medicure-section .section-subtitle-about,
+    .leadership-team-section .section-subtitle-leadership {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+    .about-medicure-section .about-card,
+    .leadership-team-section .team-member-card {
+        padding: 20px;
+    }
+    .about-medicure-section .card-icon-wrapper {
+        font-size: 2rem;
+    }
+    .about-medicure-section .card-title-about {
+        font-size: 1.2rem;
+    }
+    .about-medicure-section .card-description-about {
+        font-size: 0.85rem;
+    }
+    .our-story-section .story-text {
+        font-size: 0.9rem;
+    }
+    .leadership-team-section .team-profile-img {
+        width: 80px;
+        height: 80px;
+    }
+    .leadership-team-section .team-name {
+        font-size: 1.1rem;
+    }
+    .leadership-team-section .team-title {
+        font-size: 0.8rem;
+    }
+    .leadership-team-section .team-description {
+        font-size: 0.8rem;
+    }
+}
+/* servies */
+.our-services-section {
+    background-color: #f8f9fa; /* Light background from screenshot */
+    padding: 80px 0; /* Consistent padding */
+}
+
+.our-services-section .section-title-services {
+    font-size: 2.5rem; /* Matches screenshot */
+    font-weight: 700; /* Bold */
+    color: #343a40; /* Dark text */
+    letter-spacing: -0.02em; /* Adjusted to match screenshot */
+}
+
+.our-services-section .section-subtitle-services {
+    font-size: 1.1rem; /* Matches screenshot */
+    color: #6c757d; /* Muted text */
+    line-height: 1.5;
+    margin-bottom: 50px; /* Space below subtitle */
+}
+
+.our-services-section .service-card {
+    background-color: #ffffff; /* White card background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 25px; /* Reduced padding to make card smaller */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; /* Ensure cards are same height in a row */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute content vertically */
+    align-items: flex-start; /* Align content to left */
+}
+
+.our-services-section .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.our-services-section .service-icon-wrapper {
+    font-size: 2.5rem; /* Icon size */
+    color: #007bff; /* Default blue for icons */
+    margin-bottom: 15px; /* Space below icon */
+    align-self: center; /* Center icon horizontally in the card */
+}
+
+.our-services-section .service-title {
+    font-size: 1.2rem; /* Reduced title font size */
+    font-weight: 600; /* Semi-bold */
+    color: #343a40; /* Dark text */
+    letter-spacing: -0.01em; /* Adjusted */
+    text-align: left; /* Aligned to left */
+    width: 100%; /* Take full width */
+}
+
+.our-services-section .service-description {
+    font-size: 0.9rem; /* Reduced description font size */
+    color: #495057; /* Text color */
+    line-height: 1.6; /* Readability */
+    text-align: left; /* Aligned to left */
+    margin-bottom: 15px; /* Space below description */
+    width: 100%; /* Take full width */
+}
+
+.our-services-section .features-heading {
+    font-size: 0.95rem; /* Reduced features heading font size */
+    font-weight: 600; /* Semi-bold */
+    color: #343a40; /* Dark text */
+    text-align: left; /* Aligned to left */
+    margin-bottom: 10px; /* Space below heading */
+    width: 100%; /* Take full width */
+}
+
+.our-services-section .features-list {
+    list-style: none; /* Remove default bullet */
+    padding-left: 0; /* Remove default padding */
+    margin-bottom: 20px; /* Space below list */
+    width: 100%; /* Take full width */
+}
+
+.our-services-section .features-list li {
+    font-size: 0.85rem; /* Reduced feature list item font size */
+    color: #495057; /* Text color */
+    line-height: 1.5;
+    margin-bottom: 5px; /* Space between list items */
+    display: flex; /* Use flex for icon alignment */
+    align-items: center; /* Vertically align icon and text */
+}
+
+.our-services-section .features-list .feature-bullet {
+    font-size: 0.4rem; /* Small circle bullet size */
+    color: #007bff; /* Blue color for bullet */
+    margin-right: 8px; /* Space between bullet and text */
+}
+
+.our-services-section .service-price {
+    font-size: 1rem; /* Reduced price font size */
+    font-weight: 600; /* Semi-bold */
+    color: #343a40; /* Dark text */
+    text-align: left; /* Aligned to left */
+}
+
+.our-services-section .service-btn {
+    background-color: #007bff; /* Blue button */
+    border-color: #007bff; /* Blue border */
+    font-size: 0.8rem; /* Further reduced button font size */
+    padding: 6px 15px; /* Further adjusted button padding */
+    border-radius: 9999px; /* Changed border radius to make it capsule-like */
+    font-weight: 500; /* Medium font weight */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    min-width: 110px; /* Adjusted min-width for consistent size */
+    text-align: center; /* Ensure text is centered within the button */
+}
+
+.our-services-section .service-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    border-color: #0056b3;
+}
+
+/* --- Additional Features Section Styles --- */
+.additional-features-section {
+    background-color: #ffffff; /* White background */
+    padding: 80px 0; /* Consistent padding */
+}
+
+.additional-features-section .section-title-features {
+    font-size: 2.5rem; /* Matches screenshot */
+    font-weight: 700; /* Bold */
+    color: #343a40; /* Dark text */
+    letter-spacing: -0.02em; /* Adjusted to match screenshot */
+}
+
+.additional-features-section .feature-item {
+    background-color: #f8f9fa; /* Light background for feature items */
+    border-radius: 10px; /* Rounded corners */
+    padding: 30px; /* Padding inside items */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Lighter shadow */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; /* Ensure items are same height in a row */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.additional-features-section .feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.additional-features-section .feature-icon-wrapper {
+    font-size: 2.5rem; /* Icon size */
+    margin-bottom: 15px; /* Space below icon */
+}
+
+.additional-features-section .feature-title {
+    font-size: 1.2rem; /* Title font size */
+    font-weight: 600; /* Semi-bold */
+    color: #343a40; /* Dark text */
+    letter-spacing: -0.01em; /* Adjusted */
+    margin-bottom: 10px; /* Space below title */
+}
+
+.additional-features-section .feature-description {
+    font-size: 0.9rem; /* Description font size */
+    color: #495057; /* Text color */
+    line-height: 1.6; /* Readability */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 991.98px) { /* For tablets and smaller */
+    .our-services-section .section-title-services,
+    .additional-features-section .section-title-features {
+        font-size: 2rem;
+    }
+    .our-services-section .section-subtitle-services {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+    .our-services-section .service-card,
+    .additional-features-section .feature-item {
+        padding: 20px; /* Further reduced padding for smaller screens */
+    }
+    .our-services-section .service-icon-wrapper,
+    .additional-features-section .feature-icon-wrapper {
+        font-size: 2rem;
+    }
+    .our-services-section .service-title,
+    .additional-features-section .feature-title {
+        font-size: 1.05rem; /* Adjusted for smaller screens */
+    }
+    .our-services-section .service-description,
+    .our-services-section .features-heading,
+    .our-services-section .features-list li,
+    .our-services-section .service-price,
+    .additional-features-section .feature-description {
+        font-size: 0.8rem; /* Adjusted for smaller screens */
+    }
+    .our-services-section .service-btn {
+        font-size: 0.7rem; /* Adjusted for smaller screens */
+        padding: 5px 12px; /* Adjusted for smaller screens */
+        min-width: 90px; /* Adjusted min-width for smaller screens */
+    }
+}
+
+@media (max-width: 767.98px) { /* For mobile devices */
+    .our-services-section,
+    .additional-features-section {
+        padding: 60px 0;
+    }
+    .our-services-section .section-title-services,
+    .additional-features-section .section-title-features {
+        font-size: 1.8rem;
+    }
+    .our-services-section .section-subtitle-services {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+    .our-services-section .service-card,
+    .additional-features-section .feature-item {
+        padding: 15px; /* Further reduced padding for mobile */
+    }
+    .our-services-section .service-icon-wrapper,
+    .additional-features-section .feature-icon-wrapper {
+        font-size: 1.8rem;
+    }
+    .our-services-section .service-title,
+    .additional-features-section .feature-title {
+        font-size: 0.9rem; /* Adjusted for mobile screens */
+    }
+    .our-services-section .service-description,
+    .our-services-section .features-heading,
+    .our-services-section .features-list li,
+    .our-services-section .service-price,
+    .additional-features-section .feature-description {
+        font-size: 0.7rem; /* Adjusted for mobile screens */
+    }
+    .our-services-section .service-btn {
+        font-size: 0.65rem; /* Adjusted for mobile screens */
+        padding: 3px 8px; /* Adjusted for mobile screens */
+        min-width: 80px; /* Adjusted min-width for mobile */
+    }
+}
+
+/* card-1 */
+/* Styles for the section heading and slogan - now outside the carousel box */
+.py-3.bg-gray-100 h2 { /* Targeting the h2 within the section */
+    font-size: 2.5rem; /* Matches 'Our Values' and 'Meet the Team' section-title */
+    font-weight: 700; /* Bold font weight */
+    color: #343a40; /* Darker text color */
+    margin-bottom: 10px; /* Space below title */
+}
+
+.py-3.bg-gray-100 p.text-lg { /* Targeting the p within the section */
+    font-size: 1.1rem; /* Matches 'Our Values' and 'Meet the Team' section-subtitle */
+    color: #6c757d; /* Muted text color */
+    margin-bottom: 50px; /* Space below slogan before carousel box */
+}
+
+/* Styles for the individual partner cards' inner content area */
+.partner-card-inner {
+    background-color: #ffffff; /* White background for the card content area */
+    border-radius: 10px; /* Rounded corners for the card content area */
+    padding: 30px; /* Padding inside the card content area */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Subtle shadow for the card content area */
+    text-align: center; /* Center align content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align content to top of card */
+    width: 280px; /* Fixed width for desktop to show 3 cards */
+    height: 350px; /* Increased height for all cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
+    overflow: hidden; /* Hide any content that overflows the fixed height */
+}
+
+/* Hover effect on the anchor tag, which contains the inner card */
+.carousel-track a:hover .partner-card-inner {
+    transform: translateY(-5px); /* Move the inner card up by 5 pixels on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12); /* More pronounced shadow on hover */
+}
+
+/* Styling for the circular logo wrapper, mimicking "profile circle box" */
+.partner-logo-wrapper {
+    width: 120px; /* Size for the circular image wrapper */
+    height: 120px; /* Size for the circular image wrapper */
+    border-radius: 50%; /* Ensure it's perfectly circular */
+    overflow: hidden; /* Hide anything outside the circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa; /* Light background for the circle, similar to team profiles */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow for the circle itself */
+    /* Removed the blue border */
+    margin-bottom: 20px; /* Space below the logo, matching team profiles */
+}
+
+.partner-logo-wrapper img {
+    width: 100%; /* Image fills its circular container */
+    height: 100%; /* Image fills its circular container */
+    object-fit: cover; /* Ensures image covers the area without distortion */
+    border-radius: 50%; /* Image itself is also circular */
+}
+
+/* Styles for the partner name (h3) */
+.partner-card-inner .partner-name {
+    font-size: 1.3rem; /* User name font size, matching team names */
+    font-weight: 600; /* Semi-bold font weight */
+    color: #343a40; /* Darker text color */
+    margin-bottom: 5px; /* Space below name */
+}
+
+/* Styles for the partner slogan/description (p) */
+.partner-card-inner .partner-description {
+    font-size: 0.9rem; /* User experience text size, matching team descriptions */
+    color: #495057; /* Slightly darker text color */
+    line-height: 1.6; /* Line height for readability */
+    text-align: center; /* Center align text */
+    /* Ensure description does not cause card to grow */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limit to 3 lines */
+    -webkit-box-orient: vertical;
+}
+
+/* Styles for the carousel track that holds all partner cards */
+.carousel-track {
+    display: flex;
+    flex-direction: row;
+    transition: transform 0.8s ease-in-out;
+    gap: 30px; /* Adjusted gap for desktop to show 3 cards */
+    padding: 10px 0; /* Add vertical padding to the track to ensure hover-up space */
+}
+
+/* Ensure anchor tags within the carousel don't have default link styles */
+.carousel-track a {
+    text-decoration: none; /* Removes underline from links */
+    color: inherit; /* Inherits text color from parent */
+    display: flex; /* Make the anchor tag a flex container to center the card */
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Ensure anchor takes full height for vertical centering */
+}
+
+/* Responsive adjustments for the carousel container and cards */
+@media (max-width: 1024px) { /* Adjust for medium screens (e.g., tablets) */
+    .container.mx-auto {
+        max-width: 90%;
+    }
+    .partner-card-inner {
+        width: 210px; /* Adjusted width for tablets to show 3 cards */
+        height: 330px; /* Increased fixed height for tablets */
+        padding: 25px; /* Adjusted padding */
+    }
+    .partner-logo-wrapper {
+        width: 100px; /* Smaller image size */
+        height: 100px; /* Smaller image size */
+    }
+    .partner-card-inner .partner-name {
+        font-size: 1.2rem;
+    }
+    .partner-card-inner .partner-description {
+        font-size: 0.85rem;
+    }
+    .py-3.bg-gray-100 h2 {
+        font-size: 2rem;
+    }
+    .py-3.bg-gray-100 p.text-lg {
+        font-size: 1rem;
+    }
+    .carousel-track {
+        gap: 25px; /* Adjusted gap for tablets */
+    }
+}
+
+@media (max-width: 768px) { /* Adjust for small screens (e.g., mobile phones) */
+    .container.mx-auto {
+        max-width: 95%;
+        padding: 1rem;
+    }
+    .partner-card-inner {
+        width: 160px; /* Even smaller card width, will likely show 2 cards */
+        height: 310px; /* Increased fixed height for mobile */
+        padding: 20px; /* Reduce card padding */
+    }
+    .partner-logo-wrapper {
+        width: 80px; /* Even smaller image size */
+        height: 80px; /* Even smaller image size */
+    }
+    .partner-card-inner .partner-name {
+        font-size: 1.1rem;
+    }
+    .partner-card-inner .partner-description {
+        font-size: 0.75rem;
+    }
+    .carousel-track {
+        gap: 20px; /* Adjusted gap for mobile */
+    }
+    .py-3.bg-gray-100 h2 {
+        font-size: 1.8rem;
+    }
+    .py-3.bg-gray-100 p.text-lg {
+        font-size: 0.85rem;
+    }
+}

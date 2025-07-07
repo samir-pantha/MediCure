@@ -1,0 +1,231 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MediCure Navigation</title>
+   <!-- Font Awesome CSS CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/feather-icons"></script>
+
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="logomycure.png" alt="Logo" />
+        <span>MediCure</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" onclick="window.location.href='hospitaldirectory.html'" >Hospitals</a></li>
+          <li class="nav-item"><a class="nav-link" onclick="window.location.href='chatbot.html'">Chatbot</a></li>
+          <li class="nav-item"><a class="nav-link" onclick="window.location.href='doctordirectory.html'">Doctors</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" onclick="window.location.href='laboratory.html'">Laboratory</a></li>
+
+          <li class="nav-item"><a class="nav-link" onclick="window.location.href='todolist.html'">My Plan</a></li>
+            <li class="nav-item"><a class="nav-link" style="color:#ff0000 !important; font-size:0.95em;" onclick="window.location.href='emergency.html'">EMERGENCY</a></li>
+          
+        </ul>
+        <ul class="navbar-nav mb-2 mb-lg-0 d-flex align-items-center">
+          <li class="nav-item"><a href="loginpage.html" class="btn btn-outline-primary">Login</a></li>
+          <li class="nav-item"><a href="registerform.html" class="btn btn-register">Register</a></li>
+          <li class="nav-item">
+        <div class="profile-wrapper" onclick="window.location.href='profile.html'" title="Profile">
+              <img src="profilepic.jpg" alt="Profile" />
+        </div>
+ 
+          </li>
+          <li class="nav-item">
+            <div class="location-container">
+              <svg class="location-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                  fill="darkred"
+                />
+              </svg>
+              <div class="location-text">
+                <span class="line1">Nepal</span>
+                <span class="line2" id="locationText">Detecting...</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+ 
+  <!-- about -->
+    <!-- About MediCure Section -->
+    <section class="about-medicure-section py-5">
+        <div class="container text-center">
+            <h2 class="section-title-about mb-2">About <span class="text-primary">MediCure</span></h2>
+            <p class="section-subtitle-about mb-5">
+                We're revolutionizing healthcare by making quality medical services accessible, <br>
+                affordable, and convenient for everyone in Nepal and beyond.
+            </p>
+
+            <div class="row justify-content-center">
+                <!-- Our Mission Card -->
+                <div class="col-12 col-md-6 col-lg-5 d-flex mb-4">
+                    <div class="about-card flex-fill">
+                        <div class="card-icon-wrapper mb-3">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3 class="card-title-about text-primary">Our Mission</h3>
+                        <p class="card-description-about">
+                            To democratize healthcare by providing a comprehensive digital platform that connects patients with healthcare providers, making quality medical care accessible to all, regardless of location or economic status.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Our Vision Card -->
+                <div class="col-12 col-md-6 col-lg-5 d-flex mb-4">
+                    <div class="about-card flex-fill">
+                        <div class="card-icon-wrapper mb-3">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3 class="card-title-about text-primary">Our Vision</h3>
+                        <p class="card-description-about">
+                            To become the leading healthcare platform in Nepal, transforming how people access and receive medical care through innovative technology and compassionate service.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="our-story-section py-5 bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="section-title-story mb-3">Our Story</h2>
+                    <p class="story-text mb-3">
+                        MediCure was founded in 2020 with a simple yet powerful vision: to make quality healthcare accessible to everyone. Our founders, a team of healthcare professionals and technology experts, recognized the challenges people face in accessing timely and affordable medical care.
+                    </p>
+                    <p class="story-text mb-3">
+                        Starting in Nepal, we've grown to serve thousands of patients across the region, partnering with leading hospitals and healthcare providers to create a comprehensive healthcare ecosystem.
+                    </p>
+                    <p class="story-text">
+                        Today, MediCure continues to innovate, leveraging cutting-edge technology to bridge the gap between patients and healthcare providers, making medical care more convenient, transparent, and effective.
+                    </p>
+                </div>
+                <div class="col-12 col-lg-6 d-flex justify-content-center">
+                    <img src="health2.jpg" alt="Doctor smiling" class="img-fluid rounded-4 shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Leadership Team Section -->
+    <section class="leadership-team-section py-5">
+        <div class="container text-center">
+            <h2 class="section-title-leadership mb-2">Our Leadership Team</h2>
+            <p class="section-subtitle-leadership mb-5">Meet the experts driving healthcare innovation</p>
+
+            <div class="row justify-content-center">
+                <!-- Team Member 1 -->
+                <div class="col-12 col-md-6 col-lg-4 d-flex mb-4">
+                    <div class="team-member-card flex-fill">
+                        <img src="oneboy.jpg" alt="Dr. Rajesh Sharma" class="team-profile-img mb-3">
+                        <h4 class="team-name mb-1">Dr. Rajesh G.C</h4>
+                        <p class="team-title text-primary mb-2">Chief Medical Officer</p>
+                        <p class="team-description">Leading healthcare innovation with 20+ years of experience</p>
+                    </div>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="col-12 col-md-6 col-lg-4 d-flex mb-4">
+                    <div class="team-member-card flex-fill">
+                        <img src="onegirl.png" alt="Priya Patel" class="team-profile-img mb-3">
+                        <h4 class="team-name mb-1">Smriti Pantha</h4>
+                        <p class="team-title text-primary mb-2">Head of Technology</p>
+                        <p class="team-description">Driving digital transformation in healthcare delivery</p>
+                    </div>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="col-12 col-md-6 col-lg-4 d-flex mb-4">
+                    <div class="team-member-card flex-fill">
+                        <img src="twoboy.jpg" alt="Dr. Amit Kumar" class="team-profile-img mb-3">
+                        <h4 class="team-name mb-1">Dr. Amit Shrestha</h4>
+                        <p class="team-title text-primary mb-2">Director of Operations</p>
+                        <p class="team-description">Ensuring seamless healthcare operations and patient satisfaction</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Footer -->
+<footer class="footer bg-light mt-5 pt-4 pb-3 border-top">
+  <div class="container text-center text-md-start">
+    <div class="row">
+
+      <!-- Brand Info with Logo -->
+      <div class="col-md-4 mb-4 d-flex flex-column align-items-md-start align-items-center">
+        <div class="d-flex align-items-center mb-2">
+          <img src="logomycure.png" alt="MediCure Logo" style="height: 32px; width: auto; margin-right: 8px;" />
+          <h5 class="text-dark fw-bold m-0">MediCure</h5>
+        </div>
+        <p class="text-muted text-md-start text-center">Your personal digital health assistant, available 24/7 to guide, support, and care.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-2 mb-4">
+        <h6 class="fw-semibold">Quick Links</h6>
+        <ul class="list-unstyled">
+          <li><a href="index.html" class="footer-link">Home</a></li>
+          <li><a href="#services" class="footer-link">Services</a></li>
+          <li><a href="#doctors" class="footer-link">Doctors</a></li>
+          <li><a href="#mypan" class="footer-link">My Plan</a></li>
+        </ul>
+      </div>
+
+      <!-- Support -->
+      <div class="col-md-2 mb-4">
+        <h6 class="fw-semibold">Support</h6>
+        <ul class="list-unstyled">
+          <li><a href="#" class="footer-link">FAQs</a></li>
+          <li><a href="#" class="footer-link">Contact Us</a></li>
+          <li><a href="#" class="footer-link">Chat with AI</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-md-4 mb-4">
+        <h6 class="fw-semibold">Contact</h6>
+        <p class="text-muted mb-1">📧 support@medicure.com</p>
+        <p class="text-muted mb-1">📞 +977-1234567890</p>
+        <p class="text-muted">🗺️ Kathmandu, Nepal</p>
+      </div>
+    </div>
+
+    <hr class="mb-2" />
+
+    <div class="text-center text-muted small">
+      &copy; 2025 MediCure. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    
+  <script src="script.js"></script>
+</body>
+</html>
